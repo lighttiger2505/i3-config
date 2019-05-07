@@ -30,7 +30,7 @@ bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Ctrl+l exec dm-tool lock
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
