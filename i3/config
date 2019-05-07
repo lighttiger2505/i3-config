@@ -16,7 +16,7 @@ set $sup Mod4
 # ------------------------------------------------------------
 # Basic Definitions
 # ------------------------------------------------------------
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 gaps inner 10
 gaps outer 10
 
