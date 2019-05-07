@@ -159,6 +159,9 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# focus the latest urgent window
+bindsym $mod+x [urgent=latest] focus
+
 # ------------------------------------------------------------
 # Keybind for Workspace Control
 # ------------------------------------------------------------
