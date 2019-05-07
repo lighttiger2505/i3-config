@@ -86,6 +86,9 @@ exec --no-startup-id nm-applet
 exec --no-startup-id parcellite
 exec --no-startup-id dunst
 exec --no-startup-id dropbox
+exec_always --no-startup-id compton
+# exec --no-startup-id feh --bg-fill ~/.config/wallpapers/two_tone_plasma_arch.jpg
+exec --no-startup-id feh --randomize --bg-fill ~/.config/wallpapers/*
 
 # ------------------------------------------------------------
 # Status Bar Bettings
