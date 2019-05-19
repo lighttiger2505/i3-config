@@ -1,19 +1,16 @@
 #!/bin/bash
 
-#st_prev=$(cat /sys/class/drm/card0-HDMI-A-1/status)
-st_prev="disconnected"
+display="HDMI2"
+st_prev=$(xrandr | grep " connected" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/" | grep ${display})
 
 while :
 do
-    st_next=$(cat /sys/class/drm/card0-HDMI-A-2/status)
-    if [ $st_prev != $st_next ]; then
-        echo "connect or disconnect display"
+    st_next=$(xrandr | grep " connected" | sed -e "s/\([A-Z0-9]\+\) connected.*/\1/" | grep ${display})
+    if [ "${st_prev}" != "${st_next}" ]; then
         st_prev=$st_next
-        if [ $st_next = "connected" ]; then
-            echo "do change multi display"
-            xrandr --output eDP1 --mode 1920x1080 --output HDMI2 --auto --above eDP1
+        if [ "${st_next}" = "${display}" ]; then
+            xrandr --output eDP1 --mode 1920x1080 --output ${display} --auto --above eDP1
         else
-            echo "do change single display"
             xrandr --output eDP1 --mode 1920x1080 --output HDMI2 --off
         fi
     fi
