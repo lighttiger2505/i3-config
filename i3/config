@@ -82,12 +82,15 @@ for_window [instance="dropdown_*"] scratchpad show
 # ------------------------------------------------------------
 exec --no-startup-id fcitx
 exec --no-startup-id nm-applet
-exec --no-startup-id parcellite
 exec --no-startup-id dunst
 exec --no-startup-id dropbox
 exec_always --no-startup-id compton
-# exec --no-startup-id feh --bg-fill ~/.config/wallpapers/two_tone_plasma_arch.jpg
-exec --no-startup-id feh --randomize --bg-fill ~/.config/wallpapers/*
+
+# Set wall paper randomize
+exec --no-startup-id ~/.config/i3/random_wallpaper.sh
+
+# Check detect sub display
+exec --no-startup-id ~/.config/i3/detect_displays.sh
 
 # ------------------------------------------------------------
 # Status Bar Bettings
